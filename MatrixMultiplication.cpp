@@ -84,15 +84,14 @@ return M3;
 int main()
 {
 
-    cout<<"please enter "<<n*n<< " values for matrix 1"<<endl;
+   
     createMatrix(M1);
-    cout<<"please enter "<<n*n<< " values for matrix 2"<<endl;
 
 
     createMatrix(M2);
-    cout<<"matrix 1"<<endl;
+    
     PrintMatrix(M1);
-    cout<<"matrix 2"<<endl;
+    
     PrintMatrix(M2);
 
 
@@ -103,13 +102,15 @@ int main()
         pthread_create(&threads[i], NULL, MatrixMultiply, (void*)(t));
 
 
+
+
     }
 
      for (int i = 0; i < n; i++){
         pthread_join(threads[i], NULL);
      }
 
-     cout<<"multiplication of matrix 1 and 2"<<endl;
+     
 
      PrintMatrix(M3);
 
